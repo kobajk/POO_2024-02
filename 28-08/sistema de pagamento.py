@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class Pagamentos():
+class Pagamentos(ABC):
     def __init__(self, quantia, data):
         self.quantia = quantia
         self.data = data
@@ -36,3 +36,13 @@ class Pix(Pagamentos):
     
     def efetuar_pagamento(self):
         print(f" Pagamento efetuado via PIX no valor de {self.quantia} para a chave {self.cod_pix}")
+
+
+if __name__ == "__main__":
+    pag1 = Dinheiro(400,"28/08/2024","Dolares")
+    pag2 = CartaoCredito(3000.99,"01/09/2024",65465150651231,"02/40")
+    pag3 = Pix(20000,"29/08/2024", 123123123123213)
+
+    pag1.efetuar_pagamento()
+    pag2.efetuar_pagamento()
+    pag3.efetuar_pagamento()
