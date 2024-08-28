@@ -127,7 +127,6 @@ class Concessionaria:
     
     def adicionar_veiculo(self, veiculo):
         self.veiculos.append(veiculo)
-        self.preco_base.append(veiculo.preco_base)
     
     def calcular_valor_estoque(self):
         return sum(self.veiculos)
@@ -155,9 +154,9 @@ class Concessionaria:
                     veiculo = Caminhao(str(input("Marca: ")), str(input("Modelo: ")), float(input("Preco_base: ")), str(input("Modelo: ")),float(input("Capacidade de Carga (Toneladas): ")), int(input("Eixos: ")))
                     self.adicionar_veiculo(veiculo.preco_base)
                 else:
-                    print(" Escolha inexistente")           
+                    print(" Escolha inexistente")
             elif escolha == 2:
-                self.calcular_valor_estoque()
+                print(f"O valor de estoque é: {self.calcular_valor_estoque()}")
             elif escolha == 0:
                 break
 
