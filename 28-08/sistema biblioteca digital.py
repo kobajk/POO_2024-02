@@ -46,12 +46,32 @@ class Audiolivro(MaterialBiblioteca):
 class Biblioteca:
     def __init__(self):
         self.acervo = []
-    
-    def adicionar_material(self):
-        pass
+
+    def adicionar_material(self, material):
+        self.acervo.append(material)
 
     def remover_material(self):
-        pass
+        indice = int(input(" Insira o indice do material que deseja remover"))
+        print(f" O material {self.acervo.pop(indice).titulo} foi excluido")
 
-    def exibir_informacoes_material(self):
-        pass
+
+    def exibir_informacoes_material(self, material):
+        material.get_informacoes()
+
+    def exibir_informacoes(self):
+        cont = 0
+        for material in self.acervo:    
+            print(cont, material.titulo)
+            cont += 1
+
+Saraiva = Biblioteca()
+
+material1 = Ebook("Vida do Bruno","Bruno",2000,2)
+material2 = Livro("Vida do Caue","Caue",2004,9999999)
+
+
+Saraiva.adicionar_material(material1)
+Saraiva.adicionar_material(material2)
+Saraiva.exibir_informacoes()
+
+Saraiva.remover_material()
