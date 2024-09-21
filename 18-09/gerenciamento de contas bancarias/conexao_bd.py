@@ -2,7 +2,7 @@ import sqlite3
 class ConexaoBD:
     def __init__(self):
         try:
-            self.conn = sqlite3.connect('banco.bd')
+            self.conn = sqlite3.connect('18-09/gerenciamento de contas bancarias/banco.bd')
             self.cursor = self.conn.cursor()
         except sqlite3.Error as e:
             print(f"Erro na conexão com o banco de dados: {e}")
@@ -12,9 +12,11 @@ class ConexaoBD:
             try:
                 self.cursor.execute('''
                                     CREATE TABLE IF NOT EXISTS contas
-                                    (id INTEGER PRIMARY KEY AUTO INCREMENT, 
+                                    (id INTEGER PRIMARY KEY AUTOINCREMENT, 
                                     numero_conta INTEGER NOT NULL,
-                                    titular VARCHAR(250) NOT NULL)
+                                    titular TEXT NOT NULL,
+                                    saldo REAL NOT NULL,
+                                    limite REAL NOT NULL)
                                     ''')
             except sqlite3.Error as e:
                 print(f"Erro na criação da tabela contas: {e}")
