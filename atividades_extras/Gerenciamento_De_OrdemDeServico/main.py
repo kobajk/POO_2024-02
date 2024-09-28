@@ -24,5 +24,6 @@ def main():
     print(f'O orçamento do Servico1 é: {servico1.retorna_orcamento()}R$')
     print(f'O orçamento do Servico2 é: {servico2.retorna_orcamento()}R$')
 
+    conexao.fechar_conexao()
 if __name__ == "__main__":
     main()
