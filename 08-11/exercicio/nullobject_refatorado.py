@@ -57,3 +57,8 @@ class Pedidos:
         endereco = self.buscar_endereco(cliente)
 
         print(f"Pedido processado para {cliente.nome}. Produto: {produto.nome}. Entrega: {endereco.rua}, {endereco.cidade}.")
+
+if __name__ == "__main__":
+    pedidos = Pedidos()
+    pedidos.processar_pedido(1, "ABC")
+    pedidos.processar_pedido(2, "XYZ")
