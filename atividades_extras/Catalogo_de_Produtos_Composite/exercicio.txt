@@ -1,0 +1,27 @@
+Você foi contratado para desenvolver um sistema de gerenciamento de catálogo para uma loja online. O sistema deve permitir que produtos individuais e categorias de produtos sejam gerenciados de maneira uniforme. A estrutura do catálogo deve permitir que cada categoria contenha produtos individuais e outras subcategorias.
+
+Requisitos:
+
+ü  Crie uma classe abstrata CatalogComponent com um método abstrato show_details.
+
+ü  Crie uma classe Product que herda de CatalogComponent e implementa o método show_details para mostrar o nome e o preço do produto.
+
+ü  Crie uma classe Category que herda de CatalogComponent.
+
+ü  A classe category deve conter:
+
+ü  Ter uma lista de componentes filhos (Product ou Category).
+
+ü  Implementar métodos para adicionar e remover componentes.
+
+ü  Implementar o método show_details para mostrar o nome da categoria e os detalhes de todos os componentes filhos.
+
+ü  Implemente um código cliente que:
+
+ü  Crie alguns produtos e categorias.
+
+ü  Adicione produtos às categorias.
+
+ü  Adicione categorias a outras categorias.
+
+ü  Exiba a estrutura completa do catálogo chamando show_details na categoria raiz.
